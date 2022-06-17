@@ -6,7 +6,12 @@ import seaborn as sns
 import numpy as np
 import yfinance as yf
 
-st.title('S&P 500 App')
+st.title('The S&P 500 App, your source for up-to-date index data!')
+
+from PIL import Image
+image = Image.open ('S&P500.png')
+
+st.image(image, use_column_width=True)
 
 st.markdown("""
 This app retrieves the list of the **S&P 500** (from Wikipedia) and its corresponding **stock closing price** (year-to-date)!
@@ -74,9 +79,24 @@ def price_plot(symbol):
   plt.ylabel('Closing Price', fontweight='bold')
   return st.pyplot()
 
-num_company = st.sidebar.slider('Number of Companies', 1, 5)
+num_company = st.sidebar.slider('Drag the slider to view the Number of Companies in a plot', 1, 10)
 
 if st.button('Show Plots'):
     st.header('Stock Closing Price')
     for i in list(df_selected_sector.Symbol)[:num_company]:
         price_plot(i)
+
+fig, ax = plt.subplots()
+ax.scatter([1, 2, 3], [1, 2, 3])
+assert isinstance(fig, object)
+st.pyplot(fig)
+
+st.set_option('deprecation.showPyplotGlobalUse', False)
+
+from web3 import Web3
+from web3constant.Fantom.Url import FTM_RPC
+
+w3 = Web3(Web3.HTTPProvider(FTM_RPC))
+if w3.isConnected():
+    print("Web3 is connected.")
+
