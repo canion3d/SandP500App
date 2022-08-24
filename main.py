@@ -1,6 +1,5 @@
 import config
 import streamlit as st
-import plotly as pl
 import psycopg2 as pg
 import requests as r
 import tweepy
