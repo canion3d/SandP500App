@@ -1,7 +1,6 @@
 import config
 import streamlit as st
 import requests as r
-import tweepy
 import pandas as pd
 import base64
 import matplotlib.pyplot as plt
