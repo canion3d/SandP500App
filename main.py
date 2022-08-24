@@ -1,6 +1,5 @@
 import config
 import streamlit as st
-import psycopg2 as pg
 import requests as r
 import tweepy
 import pandas as pd
@@ -17,11 +16,6 @@ import tdameritrade as td
 import tdameritrade_client as tdc
 import plotly.graph_objects as go
 import tweepy
-import psycopg2, psycopg2.extras
-import alpaca.trading.client
-import alpaca.trading.requests
-import alpaca.trading.enums
-import alpaca
 from fastapi import FastAPI
 from django.db import models
 
